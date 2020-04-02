@@ -28,7 +28,7 @@
 
           <div class="mb-3">
             <div class="form-group">
-              <label for="nombre">Stock</label>
+              <label for="stock">Stock</label>
               <input type="number" class="form-control" id="stock" name="stock">
             </div>
           </div>
@@ -74,7 +74,7 @@
             
             <c:forEach items="${descuentos}" var="descuento">
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="descuento" id="descuento${descuento.getValor() }" value="${descuento.getValor() }" checked>
+              <input class="form-check-input" type="radio" name="descuento" id="descuento${descuento.getValor() }" value="${descuento.getValor() }">
               <label class="form-check-label" for="descuento${descuento.getValor() }">
                 ${descuento.getValor() }%
               </label>

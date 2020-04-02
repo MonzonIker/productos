@@ -67,7 +67,7 @@ public class ModeloProducto extends Conector{
 		java.util.Date utilData = p.getFecha_compra();
 		java.sql.Date sqlData = new java.sql.Date(utilData.getTime());
 		try {
-		 PreparedStatement pstInsert = conexion.prepareStatement("insert into productos (`nombre`, `stock`, `fecha_compra`, `color`, `made_in`, `precio`, `descuento`) values (?, ?, ?,?,?,?,?) ");
+		 PreparedStatement pstInsert = conexion.prepareStatement("insert into productos (`nombre`, `stock`, `fecha_compra`, `color`, `made_in`, `precio`, `descuento`, `talla`) values (?, ?, ?,?,?,?,?,?) ");
 		 pstInsert.setString(1, p.getNombre());
 		 pstInsert.setInt(2, p.getStock());
 		 pstInsert.setDate(3, sqlData);
@@ -75,6 +75,7 @@ public class ModeloProducto extends Conector{
 		 pstInsert.setString(5, p.getMade_in());
 		 pstInsert.setDouble(6, p.getPrecio());
 		 pstInsert.setInt(7, p.getDescuento());
+		 pstInsert.setString(8, p.getTallas());
 		 
 		 pstInsert.execute();
 		}catch (SQLException e) {
