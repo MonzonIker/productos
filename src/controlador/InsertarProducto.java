@@ -42,16 +42,17 @@ public class InsertarProducto extends HttpServlet {
 		SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
 		
 		try {
-			fechaCompra = formato.parse(request.getParameter("fecha_compra"));
+			fechaCompra = formato.parse(request.getParameter("fechaCompra"));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		
 		String color=request.getParameter("color");
 		int stock=Integer.parseInt(request.getParameter("stock"));
-		String made_in=request.getParameter("made_in");
+		String made_in=request.getParameter("madein");
 		Double precio=Double.parseDouble(request.getParameter("precio"));
 		int descuento=Integer.parseInt(request.getParameter("descuento"));
+		String tallas=request.getParameter("tallas");
 		
 		// crear una Producto con los datos del formulario	
 		Producto producto=new Producto();
@@ -62,6 +63,7 @@ public class InsertarProducto extends HttpServlet {
 	    producto.setMade_in(made_in);
 	    producto.setPrecio(precio);
 	    producto.setDescuento(descuento);
+	    producto.setTallas(tallas);
 	    
 	    //insertar Producto
 		mProducto.insert(producto);				

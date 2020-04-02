@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,22 +19,85 @@
     </nav>
     
     <form action="InsertarProducto" method="GET">
+          <div class="mb-3">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-group">
+              <label for="nombre">Stock</label>
+              <input type="number" class="form-control" id="stock" name="stock">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-group">
+              <label for="fechaCompra">Fecha de compra</label>
+              <input type="date" class="form-control" id="fechaCompra" name="fechaCompra">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-group">
+              <label for="color">Color</label>
+              <input type="color" class="form-control" id="color" name="color">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-group">
+              <label for="madein">Made in</label>
+              <select id="madein" name="madein" class="form-control">
+              
+              <c:forEach items="${estados}" var="estado">
+              
+                <option value="${estado.getName() }">${estado.getName() }</option>
+                
+                </c:forEach>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-group">
+              <label for="precio">Precio</label>
+              <!--el atributo step habilita los decimales en los inputs de tipo number-->
+              <input type="number" class="form-control" id="precio" name="precio" placeholder="1.00" step="0.01">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            Descuento
+            
+            <c:forEach items="${descuentos}" var="descuento">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="descuento" id="descuento${descuento.getValor() }" value="${descuento.getValor() }" checked>
+              <label class="form-check-label" for="descuento${descuento.getValor() }">
+                ${descuento.getValor() }%
+              </label>
+            </div>
+            </c:forEach>
+            
     
-    <table>
-   <tr><td> Nombre: </td><td><input type="text" name="nombre" value=""></td></tr>
-    <tr><td> Stock: </td><td><input type="text" name="stock" value=""> </td></tr>
-    <tr><td> Fecha_Compra: </td><td><input type="text" name="fecha_compra" value=""></td></tr> 
-    <tr><td> Color: </td><td><input type="text" name="color" value=""> </td></tr>
-     <tr><td>Made_In:</td><td> <input type="text" name="made_in" value=""></td></tr> 
-    <tr><td> Precio: </td><td><input type="text" name="precio" value=""> </td></tr>
-    <tr><td> Descuento: </td><td><input type="text" name="descuento" value=""> </td></tr>
-    
-    </table>
-    
-    <input type="submit" value="Insertar" >
-    
-   
-    </form>
+          </div>
+
+          <div class="mb-3">
+            <div class="">Tallas</div>
+            <c:forEach items="${tallas}" var="talla">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="tallas" id="talla${talla.getNombre() }" value="${talla.getNombre() }">
+              <label class="form-check-label" for="talla${talla.getNombre() }">
+                ${talla.getNombre() }
+              </label>
+            </div>
+            </c:forEach>
+           
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
     
     
     

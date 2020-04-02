@@ -43,7 +43,7 @@
               <td>${producto.getMade_in() }</td>
               <td>${producto.getPrecio() }</td>
               <td>${producto.getDescuento() }</td>
-              <td>S,M,L,XL</td>
+              <td>${producto.getTallas() }</td>
             </tr>
 
           </tbody>

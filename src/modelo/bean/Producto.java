@@ -21,7 +21,7 @@ public class Producto {
 	}
 
 	public Producto(int id, String nombre, int stock, Date fecha_compra, String color, String made_in, Double precio,
-			int descuento) {
+			int descuento,String talla) {
 		super();
 		this.id = id;
 		this.nombre = nombre;

@@ -33,7 +33,7 @@
             <tr>
               <td>${producto.getNombre() }</td>
               <td>${producto.getStock() }</td>
-              <td>S,M,L,XL</td>
+              <td>${producto.getTallas() }</td>
               <td>
                 <a class="btn btn-danger" href="">
                   <svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
