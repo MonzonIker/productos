@@ -31,6 +31,7 @@ public class Producto {
 		this.made_in = made_in;
 		this.precio = precio;
 		this.descuento = descuento;
+		this.tallas = talla;
 	}
 	
 	public int getId() {
