@@ -52,7 +52,7 @@ public class InsertarProducto extends HttpServlet {
 		String made_in=request.getParameter("madein");
 		Double precio=Double.parseDouble(request.getParameter("precio"));
 		int descuento=Integer.parseInt(request.getParameter("descuento"));
-		String tallas=request.getParameterValues("tallas").toString();
+		String[] tallas=request.getParameterValues("tallas");
 		
 		// crear una Producto con los datos del formulario	
 		Producto producto=new Producto();

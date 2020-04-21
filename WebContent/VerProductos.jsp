@@ -17,6 +17,10 @@
         <li class="breadcrumb-item"><a href="FormInsertarProducto">Nuevo</a></li>
       </ol>
     </nav>
+
+    
+
+
     <div class="row">
       <div class="col-8">
         <table class="table">
@@ -64,7 +68,7 @@
         </table>
       </div>
       <div class="col-4">
-        espacio para mostrar lo que sea
+      	<img class="img-fluid" src="images/gorro.jpg" alt="10">
       </div>
 
     </div>
